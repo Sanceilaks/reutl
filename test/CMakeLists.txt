@@ -1,4 +1,15 @@
+
+if (INSTALL_CATCH2)
+Include(FetchContent)
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.0.1 # or a later release
+)
+FetchContent_MakeAvailable(Catch2)
+else()
 find_package(Catch2 3 REQUIRED)
+endif()
 
 link_libraries(Catch2::Catch2WithMain reutl)
 
